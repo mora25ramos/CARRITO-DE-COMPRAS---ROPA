@@ -137,3 +137,15 @@ window.onload = function(){
     renderCarrito()
   }
 }
+
+
+let compraFinalizada = document.getElementById("comprar")
+compraFinalizada.addEventListener("click", () =>{
+  Swal.fire({
+    position: 'center',
+    icon: 'success',
+    title: 'Compra Confirmada',
+    showConfirmButton: false,
+    timer: 3000
+  })
+})
