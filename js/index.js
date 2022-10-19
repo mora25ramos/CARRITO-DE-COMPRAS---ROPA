@@ -141,6 +141,7 @@ window.onload = function(){
 
 let compraFinalizada = document.getElementById("comprar")
 compraFinalizada.addEventListener("click", () =>{
+  //Sacado de Sweet Alert
   Swal.fire({
     position: 'center',
     icon: 'success',
@@ -149,3 +150,10 @@ compraFinalizada.addEventListener("click", () =>{
     timer: 3000
   })
 })
+
+function consultarInventorio (){
+  fetch ('https://635064873e9fa1244e45a96b.mockapi.io/:endpoint')
+  .then ((response)=> response.json ())
+  .then ((data) => console.log (data))
+  .catch((error) => console.log (error))
+}
