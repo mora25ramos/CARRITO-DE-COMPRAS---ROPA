@@ -48,6 +48,8 @@ function addItemCarrito(newItem){
   carrito.push(newItem)
   
   renderCarrito()
+
+  console.log ("Producto añadido al carrito")
 } 
 
 
@@ -96,21 +98,22 @@ function removeItemCarrito(e){
   const tr = buttonDelete.closest(".ItemCarrito")
   const title = tr.querySelector('.title').textContent;
 
-    for(let i=0; i<carrito.length ; i++){
-        if(carrito[i].title.trim() === title.trim()){
-            carrito.splice(i, 1)
-        }
+  for(let i=0; i<carrito.length ; i++){
+    if(carrito[i].title.trim() === title.trim()){
+        carrito.splice(i, 1)
     }
+  }
 
-    const alert = document.querySelector('.remove')
+  const alert = document.querySelector('.remove')
 
     setTimeout( function(){
-        alert.classList.add('remove')
+      alert.classList.add('remove')
     }, 2000)
-        alert.classList.remove('remove')
+    alert.classList.remove('remove')
 
-    tr.remove()
-    CarritoTotal()
+  tr.remove()
+  CarritoTotal()
+  console.log ("Item removido del carrrito")
 }
 
 function sumaCantidad(e){
@@ -150,4 +153,5 @@ let compraFinalizada = document.getElementById("comprar")
 compraFinalizada.addEventListener("click", () =>{
   //Sacado de Sweet Alert
   swal("Felicitaciones!", "Compra realizada con exito", "success");
+  console.log ("Compra finalizada")
 })
